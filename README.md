@@ -1,4 +1,4 @@
-# Hatch_and_Ratch
+# Hatch and Ratch
 
 A short guide to life and beyond!
 
