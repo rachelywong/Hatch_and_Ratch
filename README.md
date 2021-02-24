@@ -2,6 +2,8 @@
 
 A short guide to life and beyond!
 
+# [Check it out!](https://rachelywong.github.io/Hatch_and_Ratch/intro.html)
+
 ## Usage
 
 ### Building the book
