@@ -6,5 +6,5 @@
     - file: markdown
     - file: notebooks
 - part: Arrays
-  chapters:
+  sections:
   - file: arrays
