@@ -1,7 +1,6 @@
-Welcome to your Jupyter Book
+Welcome to Hatch and Ratch!
 ============================
 
-This is a small sample book to give you a feel for how book content is
-structured.
+This is a book with strategies for surviving life and beyond.
 
-Check out the content pages bundled with this sample book to get started.
+Check out the different chapters to find cheat sheets to solving any problem.
