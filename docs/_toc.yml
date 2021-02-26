@@ -5,6 +5,6 @@
   sections:
     - file: markdown
     - file: notebooks
-- part: Arrays
+- file: Arrays
   sections:
-  - file: arrays
+    - file: arrays/TwoSum
