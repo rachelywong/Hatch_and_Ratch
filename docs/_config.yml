@@ -5,7 +5,7 @@
 
 #######################################################################################
 # Book settings
-title                       : Hatch_and_Ratch  # The title of the book. Will be placed in the left navbar.
+title                       : Hatch and Ratch  # The title of the book. Will be placed in the left navbar.
 author                      : Rachel Wong and Heidi Ye  # The author of the book
 copyright                   : "2021"  # Copyright year to be placed in the footer
 logo                        : logo.gif  # A path to the book logo
