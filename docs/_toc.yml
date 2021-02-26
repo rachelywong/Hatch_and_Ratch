@@ -5,4 +5,6 @@
   sections:
     - file: markdown
     - file: notebooks
-    - file: arrays
+- part: Arrays
+  chapters:
+  - file: arrays
