@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>leetcode - two sum &#8212; Hatch and Ratch</title>
+    <title>Joins &#8212; Hatch and Ratch</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Combinations &amp; Permutations" href="../Combinations_Permutations.html" />
-    <link rel="prev" title="Math" href="../Math.html" />
+    <link rel="prev" title="Basics" href="sql_tips.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -154,13 +153,13 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../Math.html">
    Math
   </a>
-  <ul class="current collapse-ul">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../math/TwoSum.html">
      leetcode - two sum
     </a>
    </li>
@@ -182,18 +181,18 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../sql.html">
    SQL
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../sql_files/sql_tips.html">
+    <a class="reference internal" href="sql_tips.html">
      Basics
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../sql_files/sql_tips2.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Joins
     </a>
    </li>
@@ -241,9 +240,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/math/TwoSum.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/sql_files/sql_tips2.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -261,27 +260,31 @@
 
         <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/rachelywong/Hatch_and_Ratch/master?urlpath=tree/docs/math/TwoSum.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
     </div>
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#querying-from-multiple-tables">
+   Querying From Multiple Tables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-customers-who-never-order-leetcode">
+     Example (Customers Who Never Order - LeetCode):
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
         
     </div>
 </div>
@@ -290,70 +293,88 @@
         
               <div>
                 
-  <div class="section" id="leetcode-two-sum">
-<h1>leetcode - two sum<a class="headerlink" href="#leetcode-two-sum" title="Permalink to this headline">¶</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">twoSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
-            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">):</span>
-                    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">):</span>
-                        <span class="k">return</span> <span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">])</span>
+  <div class="section" id="joins">
+<h1>Joins<a class="headerlink" href="#joins" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="querying-from-multiple-tables">
+<h2>Querying From Multiple Tables<a class="headerlink" href="#querying-from-multiple-tables" title="Permalink to this headline">¶</a></h2>
+<p><img alt="joins" src="../_images/joins.png" /></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> –&gt; join what is common between two tables</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RIGHT</span> <span class="pre">JOIN</span></code> –&gt; join what is common between two tables and all the records from the right table</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> –&gt; join what is common between two tables and all the records from the left table</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FULL</span> <span class="pre">JOIN</span></code> –&gt; join everything</p></li>
+<li><p>ANTI JOIN –&gt; join everything that is not in common (done with a <code class="docutils literal notranslate"><span class="pre">FULL</span> <span class="pre">JOIN</span></code> and nulls)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CROSS</span> <span class="pre">JOIN</span></code> –&gt; multiplies number of rows in the first table with the number of rows in the second table (results in Cartesian Product)</p>
+<ul>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause used with <code class="docutils literal notranslate"><span class="pre">CROSS</span> <span class="pre">JOIN</span></code> then it functions like an <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="example-customers-who-never-order-leetcode">
+<h3>Example (Customers Who Never Order - LeetCode):<a class="headerlink" href="#example-customers-who-never-order-leetcode" title="Permalink to this headline">¶</a></h3>
+<p>Suppose that a website contains two tables, the Customers table and the Orders table. Write a SQL query to find all customers who never order anything.</p>
+<p>Table: Customers</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>Name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Joe</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Henry</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Sam</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Max</p></td>
+</tr>
+</tbody>
+</table>
+<p>Table: Orders</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>CustomerID</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>Table: Expected Output</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Customers</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Henry</p></td>
+</tr>
+<tr class="row-odd"><td><p>Max</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">t1</span><span class="o">.</span><span class="n">Name</span> <span class="k">as</span> <span class="s1">&#39;Customers&#39;</span> <span class="n">FROM</span> <span class="n">Customers</span> <span class="n">t1</span> 
+<span class="n">LEFT</span> <span class="n">JOIN</span> <span class="n">Orders</span> <span class="n">t2</span> <span class="n">ON</span> <span class="n">t2</span><span class="o">.</span><span class="n">CustomerID</span> <span class="o">=</span> <span class="n">t1</span><span class="o">.</span><span class="n">Id</span>
+<span class="n">WHERE</span> <span class="n">t2</span><span class="o">.</span><span class="n">CustomerID</span> <span class="n">IS</span> <span class="n">NULL</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
-
-<span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">15</span><span class="p">]</span>
-<span class="n">target</span> <span class="o">=</span> <span class="mi">9</span>
-
-<span class="n">test</span><span class="o">.</span><span class="n">twoSum</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1]
-</pre></div>
-</div>
-</div>
-</div>
-<p>trying to make it not so slow:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">twoSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-        <span class="n">leftovers</span> <span class="o">=</span> <span class="p">[</span><span class="n">nums</span><span class="p">]</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">leftovers</span><span class="p">)</span>
-        
-        <span class="k">return</span> <span class="n">leftovers</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
-
-<span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">15</span><span class="p">]</span>
-<span class="n">target</span> <span class="o">=</span> <span class="mi">9</span>
-
-<span class="n">test</span><span class="o">.</span><span class="n">twoSum</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2, 7, 11, 15]]
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2, 7, 11, 15]]
-</pre></div>
-</div>
+<ul class="simple">
+<li><p>use <code class="docutils literal notranslate"><span class="pre">AS</span></code> to change the column name</p></li>
+<li><p>create t1 from Customers and t2 from Orders</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> Orders and Customers on CustomerID = ID</p></li>
+<li><p>but specify where CustomerID = NULL so we match customers who do not show up in the Orders table</p></li>
+</ul>
 </div>
 </div>
 </div>
@@ -371,7 +392,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./math"
+            path: "./sql_files"
         },
         predefinedOutput: true
     }
@@ -386,8 +407,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../Math.html" title="previous page">Math</a>
-    <a class='right-next' id="next-link" href="../Combinations_Permutations.html" title="next page">Combinations &amp; Permutations</a>
+    <a class='left-prev' id="prev-link" href="sql_tips.html" title="previous page">Basics</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
