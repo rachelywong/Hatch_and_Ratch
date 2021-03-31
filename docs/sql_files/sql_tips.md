@@ -1,4 +1,4 @@
-# SQL Cheatsheet
+# Basics
 
 ## Querying Data From a Table
 
@@ -29,3 +29,8 @@
     `FROM` table
     `GROUP BY` col1
     `HAVING` condition
+
+- Renaming columns
+  - use `AS` along with `SELECT`
+  - can also use `ALTER` but many coding challenges do not allow this
+  - `SELECT` table1.Name `AS` 'Customers' `FROM` Customer table1

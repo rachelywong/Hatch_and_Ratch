@@ -22,5 +22,6 @@
     - file: combo_permu/TwoSum
 - file: sql
   sections:
-    - file: sql_tips
+    - file: sql_files/sql_tips
+    - file: sql_files/sql_tips2
     

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>leetcode - two sum &#8212; Hatch and Ratch</title>
+    <title>Basics &#8212; Hatch and Ratch</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Combinations &amp; Permutations" href="../Combinations_Permutations.html" />
-    <link rel="prev" title="Math" href="../Math.html" />
+    <link rel="next" title="Joins" href="sql_tips2.html" />
+    <link rel="prev" title="SQL" href="../sql.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -154,13 +154,13 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../Math.html">
    Math
   </a>
-  <ul class="current collapse-ul">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../math/TwoSum.html">
      leetcode - two sum
     </a>
    </li>
@@ -182,18 +182,18 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../sql.html">
    SQL
   </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../sql_files/sql_tips.html">
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Basics
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../sql_files/sql_tips2.html">
+    <a class="reference internal" href="sql_tips2.html">
      Joins
     </a>
    </li>
@@ -241,9 +241,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/math/TwoSum.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/sql_files/sql_tips.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -261,27 +261,24 @@
 
         <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/rachelywong/Hatch_and_Ratch/master?urlpath=tree/docs/math/TwoSum.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
     </div>
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#querying-data-from-a-table">
+   Querying Data From a Table
+  </a>
+ </li>
+</ul>
+
+        </nav>
         
     </div>
 </div>
@@ -290,71 +287,50 @@
         
               <div>
                 
-  <div class="section" id="leetcode-two-sum">
-<h1>leetcode - two sum<a class="headerlink" href="#leetcode-two-sum" title="Permalink to this headline">¶</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">twoSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
-            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">):</span>
-                    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">):</span>
-                        <span class="k">return</span> <span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
-
-<span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">15</span><span class="p">]</span>
-<span class="n">target</span> <span class="o">=</span> <span class="mi">9</span>
-
-<span class="n">test</span><span class="o">.</span><span class="n">twoSum</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1]
-</pre></div>
-</div>
-</div>
-</div>
-<p>trying to make it not so slow:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">twoSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-        <span class="n">leftovers</span> <span class="o">=</span> <span class="p">[</span><span class="n">nums</span><span class="p">]</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">leftovers</span><span class="p">)</span>
-        
-        <span class="k">return</span> <span class="n">leftovers</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
-
-<span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">15</span><span class="p">]</span>
-<span class="n">target</span> <span class="o">=</span> <span class="mi">9</span>
-
-<span class="n">test</span><span class="o">.</span><span class="n">twoSum</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2, 7, 11, 15]]
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2, 7, 11, 15]]
-</pre></div>
-</div>
-</div>
+  <div class="section" id="basics">
+<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="querying-data-from-a-table">
+<h2>Querying Data From a Table<a class="headerlink" href="#querying-data-from-a-table" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Basics</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FROM</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WHERE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></li>
+</ul>
+</li>
+<li><p>Ordering By</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> col1, col2 <code class="docutils literal notranslate"><span class="pre">FROM</span></code> table
+<code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> col <code class="docutils literal notranslate"><span class="pre">ASC</span></code></p></li>
+<li><p>can say <code class="docutils literal notranslate"><span class="pre">DESC</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> col1, col2 <code class="docutils literal notranslate"><span class="pre">FROM</span></code> table
+<code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> col <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> 1 <code class="docutils literal notranslate"><span class="pre">OFFSET</span></code> 1</p></li>
+<li><p>limit = how many rows, offset = skip rows</p></li>
+</ul>
+</li>
+<li><p>Group By –&gt; must aggregate or use some condition like having</p>
+<ul>
+<li><p>aggregate = (<code class="docutils literal notranslate"><span class="pre">COUNT()</span></code>, <code class="docutils literal notranslate"><span class="pre">MAX()</span></code>, <code class="docutils literal notranslate"><span class="pre">MIN()</span></code>, <code class="docutils literal notranslate"><span class="pre">SUM()</span></code>, <code class="docutils literal notranslate"><span class="pre">AVG()</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> col1 <code class="docutils literal notranslate"><span class="pre">aggregate</span></code> col2
+<code class="docutils literal notranslate"><span class="pre">FROM</span></code> table
+<code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> col1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> col1 <code class="docutils literal notranslate"><span class="pre">aggregate</span></code> col2
+<code class="docutils literal notranslate"><span class="pre">FROM</span></code> table
+<code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> col1
+<code class="docutils literal notranslate"><span class="pre">HAVING</span></code> condition</p></li>
+</ul>
+</li>
+<li><p>Renaming columns</p>
+<ul>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">AS</span></code> along with <code class="docutils literal notranslate"><span class="pre">SELECT</span></code></p></li>
+<li><p>can also use <code class="docutils literal notranslate"><span class="pre">ALTER</span></code> but many coding challenges do not allow this</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> <a class="reference external" href="http://table1.Name">table1.Name</a> <code class="docutils literal notranslate"><span class="pre">AS</span></code> ‘Customers’ <code class="docutils literal notranslate"><span class="pre">FROM</span></code> Customer table1</p></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 
@@ -371,7 +347,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./math"
+            path: "./sql_files"
         },
         predefinedOutput: true
     }
@@ -386,8 +362,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../Math.html" title="previous page">Math</a>
-    <a class='right-next' id="next-link" href="../Combinations_Permutations.html" title="next page">Combinations &amp; Permutations</a>
+    <a class='left-prev' id="prev-link" href="../sql.html" title="previous page">SQL</a>
+    <a class='right-next' id="next-link" href="sql_tips2.html" title="next page">Joins</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
