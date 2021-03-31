@@ -5,9 +5,10 @@
 - Basics
   - `SELECT`
   - `FROM`
-  - `WHERE`
+  - `WHERE` --> conditions (>, <, =, !=, etc.)
   - `DISTINCT`
   - `*`
+  - `COUNT`
 
 - Ordering By
   - `SELECT` col1, col2 `FROM` table

@@ -24,4 +24,6 @@
   sections:
     - file: sql_files/sql_tips
     - file: sql_files/sql_tips2
+    - file: sql_files/sql_tips3
+
     

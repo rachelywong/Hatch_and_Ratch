@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>leetcode - two sum &#8212; Hatch and Ratch</title>
+    <title>Operators &#8212; Hatch and Ratch</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Math" href="../Math.html" />
-    <link rel="prev" title="Sorting" href="../Sorting.html" />
+    <link rel="prev" title="Joins" href="sql_tips2.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -140,13 +139,13 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../Sorting.html">
    Sorting
   </a>
-  <ul class="current collapse-ul">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sorting/TwoSum.html">
      leetcode - two sum
     </a>
    </li>
@@ -182,23 +181,23 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../sql.html">
    SQL
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../sql_files/sql_tips.html">
+    <a class="reference internal" href="sql_tips.html">
      Basics
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../sql_files/sql_tips2.html">
+    <a class="reference internal" href="sql_tips2.html">
      Joins
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../sql_files/sql_tips3.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Operators
     </a>
    </li>
@@ -246,9 +245,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/sorting/TwoSum.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/sql_files/sql_tips3.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -266,27 +265,36 @@
 
         <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/rachelywong/Hatch_and_Ratch/master?urlpath=tree/docs/sorting/TwoSum.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
     </div>
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sql-operators">
+   SQL Operators
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#combining-queries">
+     Combining Queries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#like-ilike-not-like-etc">
+     LIKE, ILIKE, NOT LIKE, ETC.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
         
     </div>
 </div>
@@ -295,70 +303,38 @@
         
               <div>
                 
-  <div class="section" id="leetcode-two-sum">
-<h1>leetcode - two sum<a class="headerlink" href="#leetcode-two-sum" title="Permalink to this headline">¶</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">twoSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
-            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">):</span>
-                    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">):</span>
-                        <span class="k">return</span> <span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">])</span>
-</pre></div>
+  <div class="section" id="operators">
+<h1>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sql-operators">
+<h2>SQL Operators<a class="headerlink" href="#sql-operators" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="combining-queries">
+<h3>Combining Queries<a class="headerlink" href="#combining-queries" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">UNION</span></code></p>
+<ul>
+<li><p>combines rows from two queries</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> col1, col2, <code class="docutils literal notranslate"><span class="pre">FROM</span></code> table1
+<code class="docutils literal notranslate"><span class="pre">UNION</span></code>
+<code class="docutils literal notranslate"><span class="pre">SELECT</span></code> col1, col2, <code class="docutils literal notranslate"><span class="pre">FROM</span></code> table2</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INTERSECT</span></code></p>
+<ul>
+<li><p>returns common rows from two queries</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> col1, col2 <code class="docutils literal notranslate"><span class="pre">FROM</span></code> table1
+<code class="docutils literal notranslate"><span class="pre">INTERSECT</span></code>
+<code class="docutils literal notranslate"><span class="pre">SELECT</span></code> col1, col2, <code class="docutils literal notranslate"><span class="pre">FROM</span></code> table2</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MINUS</span></code></p>
+<ul>
+<li><p>subtracts a result set from another result set</p></li>
+</ul>
+</li>
+</ul>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
-
-<span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">15</span><span class="p">]</span>
-<span class="n">target</span> <span class="o">=</span> <span class="mi">9</span>
-
-<span class="n">test</span><span class="o">.</span><span class="n">twoSum</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1]
-</pre></div>
-</div>
-</div>
-</div>
-<p>trying to make it not so slow:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">twoSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-        <span class="n">leftovers</span> <span class="o">=</span> <span class="p">[</span><span class="n">nums</span><span class="p">]</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">leftovers</span><span class="p">)</span>
-        
-        <span class="k">return</span> <span class="n">leftovers</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
-
-<span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">15</span><span class="p">]</span>
-<span class="n">target</span> <span class="o">=</span> <span class="mi">9</span>
-
-<span class="n">test</span><span class="o">.</span><span class="n">twoSum</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2, 7, 11, 15]]
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2, 7, 11, 15]]
-</pre></div>
-</div>
+<div class="section" id="like-ilike-not-like-etc">
+<h3>LIKE, ILIKE, NOT LIKE, ETC.<a class="headerlink" href="#like-ilike-not-like-etc" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>
@@ -376,7 +352,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./sorting"
+            path: "./sql_files"
         },
         predefinedOutput: true
     }
@@ -391,8 +367,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../Sorting.html" title="previous page">Sorting</a>
-    <a class='right-next' id="next-link" href="../Math.html" title="next page">Math</a>
+    <a class='left-prev' id="prev-link" href="sql_tips2.html" title="previous page">Joins</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
