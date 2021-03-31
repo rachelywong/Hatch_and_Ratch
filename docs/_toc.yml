@@ -20,7 +20,7 @@
 - file: Combinations_Permutations
   sections:
     - file: combo_permu/TwoSum
-- file: SQL
+- file: sql
   sections:
-    - file: SQL/sql_tips
+    - file: sql_tips
     

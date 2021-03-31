@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Math &#8212; Hatch and Ratch</title>
+    <title>SQL Cheatsheet &#8212; Hatch and Ratch</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="leetcode - two sum" href="math/TwoSum.html" />
-    <link rel="prev" title="leetcode - two sum" href="sorting/TwoSum.html" />
+    <link rel="prev" title="SQL" href="sql.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -154,8 +153,8 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="Math.html">
    Math
   </a>
   <ul class="collapse-ul">
@@ -182,13 +181,13 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="sql.html">
    SQL
   </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="sql_tips.html">
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      SQL Cheatsheet
     </a>
    </li>
@@ -236,7 +235,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Math.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/sql_tips.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -261,6 +260,20 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#querying-data-from-a-table">
+   Querying Data From a Table
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -268,10 +281,43 @@
         
               <div>
                 
-  <div class="section" id="math">
-<h1>Math<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h1>
-<p>This is a section about math.</p>
-<div class="toctree-wrapper compound">
+  <div class="section" id="sql-cheatsheet">
+<h1>SQL Cheatsheet<a class="headerlink" href="#sql-cheatsheet" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="querying-data-from-a-table">
+<h2>Querying Data From a Table<a class="headerlink" href="#querying-data-from-a-table" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Basics</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FROM</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WHERE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></li>
+</ul>
+</li>
+<li><p>Ordering By</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> col1, col2 <code class="docutils literal notranslate"><span class="pre">FROM</span></code> table
+<code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> col <code class="docutils literal notranslate"><span class="pre">ASC</span></code></p></li>
+<li><p>can say <code class="docutils literal notranslate"><span class="pre">DESC</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> col1, col2 <code class="docutils literal notranslate"><span class="pre">FROM</span></code> table
+<code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> col <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> 1 <code class="docutils literal notranslate"><span class="pre">OFFSET</span></code> 1</p></li>
+<li><p>limit = how many rows, offset = skip rows</p></li>
+</ul>
+</li>
+<li><p>Group By –&gt; must aggregate or use some condition like having</p>
+<ul>
+<li><p>aggregate = (<code class="docutils literal notranslate"><span class="pre">COUNT()</span></code>, <code class="docutils literal notranslate"><span class="pre">MAX()</span></code>, <code class="docutils literal notranslate"><span class="pre">MIN()</span></code>, <code class="docutils literal notranslate"><span class="pre">SUM()</span></code>, <code class="docutils literal notranslate"><span class="pre">AVG()</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> col1 <code class="docutils literal notranslate"><span class="pre">aggregate</span></code> col2
+<code class="docutils literal notranslate"><span class="pre">FROM</span></code> table
+<code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> col1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> col1 <code class="docutils literal notranslate"><span class="pre">aggregate</span></code> col2
+<code class="docutils literal notranslate"><span class="pre">FROM</span></code> table
+<code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> col1
+<code class="docutils literal notranslate"><span class="pre">HAVING</span></code> condition</p></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 
@@ -303,8 +349,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="sorting/TwoSum.html" title="previous page">leetcode - two sum</a>
-    <a class='right-next' id="next-link" href="math/TwoSum.html" title="next page">leetcode - two sum</a>
+    <a class='left-prev' id="prev-link" href="sql.html" title="previous page">SQL</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
